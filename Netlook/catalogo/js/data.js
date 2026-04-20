@@ -101,7 +101,7 @@ const allCategories = {
             title: "Super-heróis",
             items: [
                 { img: "https://m.media-amazon.com/images/I/71GRlX4IM+L._AC_UF1000,1000_QL80_.jpg", title: "Homem-Aranha", top10: true, badge: "Marvel", badgeColor: "#3b82f6", type: "comic" },
-                { img: "https://terraverso.com.br/wp-content/uploads/2020/12/Batman-UrbanLegends-01.jpg", title: "Batman", top10: true, badge: "DC", badgeColor: "blue", type: "comic" }
+                { img: "https://mobdica.com/wp-content/uploads/2022/09/Batman-Jim-Lee-DC-1024x576.jpeg", title: "Batman", top10: true, badge: "DC", badgeColor: "blue", type: "comic" }
             ]
         },
         {
