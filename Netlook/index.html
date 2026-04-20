@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NetLook - Quem está assistindo?</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Conteúdo principal -->
+    <main>
+        <h1>Quem está assistindo?</h1>
+
+        <div class="theme-controls">
+            <button id="themeToggle" class="theme-toggle" aria-label="Alternar modo claro/escuro">Modo escuro</button>
+            <span id="currentTheme" class="theme-label" aria-live="polite">Tema atual: automóvel</span>
+        </div>
+
+        <!-- Lista de perfis -->
+        <ul class="users" aria-label="Perfis de usuário" style="margin-top:32px;">
+            <li class="user">
+                <button type="button" class="user-select" data-username="Luís" aria-label="Selecionar Usuário Luís">
+                    <figure>
+                        <img src="assets/perfil-1.jpg" alt="Personagem de desenho animado gótico com cabelo roxos e monóculo, em um cenário fantástico de miniaturas sombrias iluminadas por velas" style="border:2px solid var(--accent);box-shadow:0 2px 12px #1e293b44;">
+                        <figcaption>Luís</figcaption>
+                    </figure>
+                </button>
+            </li>
+            <li class="user">
+                <button type="button" class="user-select" data-username="Ronaldo" aria-label="Selecionar Usuário Ronaldo">
+                    <figure>
+                        <img src="assets/perfil-2.jpg" alt="Boné de beisebol azul e branco com um grande 'M' verde, em um cenário fantástico de miniaturas sombrias iluminadas por velas" style="border:2px solid var(--accent);box-shadow:0 2px 12px #1e293b44;">
+                        <figcaption>Ronaldo</figcaption>
+                    </figure>
+                </button>
+            </li>
+            <li class="user">
+                <button type="button" class="user-select" data-username="Adelmário" aria-label="Selecionar Usuário Adelmário">
+                    <figure>
+                        <img src="assets/perfil-3.png" alt="Boné de beisebol azul e branco com um grande 'M' verde, em um cenário fantástico de miniaturas sombrias iluminadas por velas" style="border:2px solid var(--accent);box-shadow:0 2px 12px #1e293b44;">
+                        <figcaption>Adelmário</figcaption>
+                    </figure>
+                </button>
+            </li>
+            <li class="user">
+                <button type="button" class="user-select" data-username="Enaldo" aria-label="Selecionar Usuário Enaldo">
+                    <figure>
+                        <img src="assets/perfil-4.png" alt="Boné de beisebol azul e branco com um grande 'M' verde, em um cenário fantástico de miniaturas sombrias iluminadas por velas" style="border:2px solid var(--accent);box-shadow:0 2px 12px #1e293b44;">
+                        <figcaption>Enaldo</figcaption>
+                    </figure>
+                </button>
+            </li>
+        </ul>
+
+        <p id="selectedUser" class="status" aria-live="polite">Nenhum perfil selecionado.</p>
+    </main>
+
+    <script src="script.js" defer></script>
+</body>
+</html>

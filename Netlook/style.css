@@ -1,0 +1,302 @@
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg: linear-gradient(135deg, #181c2b 0%, #232946 100%);
+    --bg2: rgba(40, 44, 62, 0.12);
+    --text: #f3f6fd;
+    --card-bg: rgba(30, 34, 54, 0.98);
+    --card-border: rgba(59,130,246,0.18);
+    --shadow: 0 4px 24px 0 #1e293b99;
+    --hover-shadow: 0 8px 32px #3b82f680;
+    --accent: #60a5fa;
+    --button-bg: linear-gradient(90deg, #3b82f6 0%, #06b6d4 100%);
+    --button-text: #f3f6fd;
+}
+
+body.light {
+    --bg: linear-gradient(135deg, #f7fafc 0%, #e3e8ee 100%);
+    --bg2: rgba(255,255,255,0.85);
+    --text: #232946;
+    --card-bg: #f8fafc;
+    --card-border: #c7d2fe;
+    --shadow: 0 8px 32px #60a5fa22;
+    --hover-shadow: 0 12px 40px #3b82f622;
+    --accent: #2563eb;
+    --button-bg: linear-gradient(90deg, #06b6d4 0%, #3b82f6 100%);
+    --button-text: #232946;
+}
+
+body.dark {
+    --bg: linear-gradient(135deg, #181c2b 0%, #232946 100%);
+    --bg2: rgba(40, 44, 62, 0.12);
+    --text: #f3f6fd;
+    --card-bg: rgba(30, 34, 54, 0.98);
+    --card-border: rgba(59,130,246,0.18);
+    --shadow: 0 4px 24px 0 #1e293b99;
+    --hover-shadow: 0 8px 32px #3b82f680;
+    --accent: #60a5fa;
+    --button-bg: linear-gradient(90deg, #3b82f6 0%, #06b6d4 100%);
+    --button-text: #f3f6fd;
+}
+
+/* Fundo e layout */
+body {
+    background: var(--bg);
+    min-height: 100vh;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text);
+    transition: background 0.4s ease, color 0.4s ease;
+}
+
+/* Container principal */
+main {
+    text-align: center;
+    width: 100%;
+    max-width: 900px;
+    padding: 40px;
+    background: var(--card-bg);
+    border: 2px solid var(--card-border);
+    border-radius: 24px;
+    box-shadow: var(--shadow);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+}
+
+/* Título */
+h1 {
+    color: var(--accent);
+    font-size: 2.5em;
+    margin-bottom: 24px;
+    background: none;
+    -webkit-background-clip: unset;
+    -webkit-text-fill-color: unset;
+    background-clip: unset;
+    letter-spacing: 1.5px;
+    font-weight: 800;
+    text-shadow: 0 2px 10px #1e293b22;
+}
+
+.theme-controls {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.theme-toggle {
+    border: 1.5px solid var(--accent);
+    background: var(--button-bg);
+    color: var(--button-text);
+    padding: 10px 20px;
+    border-radius: 999px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 1.1em;
+    transition: background 0.3s, transform 0.25s, box-shadow 0.3s, border-color 0.3s;
+}
+
+.theme-toggle:hover,
+.theme-toggle:focus-visible {
+    transform: translateY(-2px) scale(1.04);
+    box-shadow: 0 0 0 3px #60a5fa44;
+    background: linear-gradient(90deg, #06b6d4 0%, #3b82f6 100%);
+    color: #fff;
+    border-color: #2563eb;
+}
+
+.status {
+    color: var(--accent);
+    font-size: 1.1em;
+    margin-top: 24px;
+    font-weight: 500;
+}
+
+/* Lista de usuários */
+.users {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+/* Item de usuário */
+.user {
+    transition: transform 0.3s ease, filter 0.3s ease, border-color 0.3s ease, background 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: var(--bg2);
+    border-radius: 20px;
+    padding: 12px;
+    border: 2px solid transparent;
+    box-shadow: 0 2px 12px #1e293b22;
+}
+
+.user:hover {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 220, 230, 0.8) 100%);
+}
+
+.user.selected {
+    border: 2px solid var(--accent);
+    filter: drop-shadow(0 0 16px #60a5fa99);
+    background: #3b82f610;
+}
+
+/* Botão invisível */
+.user-select {
+    border: none;
+    background: transparent;
+    padding: 0;
+    cursor: pointer;
+    color: inherit;
+    font: inherit;
+}
+
+/* Foco acessível */
+.user-select:focus-visible {
+    outline: auto 2px Highlight;
+    outline-offset: 2px;
+}
+
+/* Efeitos de hover */
+.user:hover,
+.user-select:hover {
+    transform: scale(1.05);
+}
+
+/* Glow na imagem */
+.user-select:hover .user img,
+.user-select:focus-visible .user img {
+    box-shadow: 0 0 24px 8px var(--accent), 0 0 48px 16px rgba(99, 102, 241, 0.4);
+}
+
+/* Figura */
+.user figure {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Imagem */
+.user img {
+    width: 150px;
+    height: 150px;
+    border-radius: 14px;
+    object-fit: cover;
+    margin-bottom: 15px;
+    box-shadow: var(--shadow);
+    transition: box-shadow 0.3s ease, border-radius 0.3s ease;
+}
+
+/* Sombra aumentada no hover */
+.user:hover img,
+.user-select:hover img {
+    box-shadow: var(--hover-shadow);
+    border-radius: 16px;
+}
+
+/* Legenda */
+.user figcaption {
+    color: var(--accent);
+    font-size: 1.2em;
+    font-weight: 600;
+    text-shadow: 0 2px 4px #1e293b22;
+}
+
+/* Responsividade */
+@media (max-width: 1024px) {
+    main {
+        margin: 0 12px;
+        padding: 30px;
+    }
+
+    .users {
+        gap: 24px;
+    }
+
+    .user img {
+        width: 140px;
+        height: 140px;
+    }
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2em;
+        margin-bottom: 30px;
+    }
+
+    .theme-controls {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .theme-toggle {
+        width: 100%;
+        max-width: 250px;
+    }
+    
+    .users {
+        gap: 22px;
+    }
+    
+    .user img {
+        width: 120px;
+        height: 120px;
+    }
+}
+
+@media (max-width: 480px) {
+    main {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+        margin-bottom: 24px;
+    }
+
+    .users {
+        gap: 16px;
+    }
+
+    .user img {
+        width: 100px;
+        height: 100px;
+    }
+
+    .theme-toggle {
+        font-size: 0.95rem;
+        padding: 9px 12px;
+    }
+}
+
+@media (min-width: 1200px) {
+    main {
+        max-width: 1100px;
+        padding: 50px;
+    }
+
+    h1 {
+        font-size: 3.3em;
+    }
+
+    .users {
+        gap: 58px;
+    }
+
+    .user img {
+        width: 180px;
+        height: 180px;
+    }
+}
